@@ -1,0 +1,22 @@
+class Solution {
+    public void merge(int[] nums1, int m, int[] nums2, int n) {
+        int left=0, right=0,k=0;
+        int ans[] =new int [nums1.length];
+        while(left<m && right<n){
+            if(nums1[left]<=nums2[right]){
+                ans[k++] =nums1[left++];
+            }else{
+                ans[k++]=nums2[right++];
+            }
+        }
+        while(left<m){
+            ans[k++]=nums1[left++];
+        }while(right<n){
+            ans[k++]=nums2[right++];
+        }
+        for(int i=0;i<k;i++){
+            nums1[i]=ans[i];
+        }
+        return;
+    }
+}
