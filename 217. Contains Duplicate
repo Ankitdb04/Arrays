@@ -1,0 +1,42 @@
+class Solution {
+    public boolean containsDuplicate(int[] nums) {
+        Arrays.sort(nums);
+
+        for (int i = 0; i < nums.length - 1; i++) {
+            if (nums[i] == nums[i + 1])
+                return true;
+        }
+        return false;
+
+    }
+}
+                                  ##################       BEtter Solution:
+class Solution {
+    public boolean containsDuplicate(int[] nums) {
+        Map <Integer,Integer> mpp=new HashMap<>();
+        for(int i=0;i<nums.length;i++){
+            if(mpp.containsKey(nums[i])){
+                return true;
+            }
+            else mpp.put(nums[i],1);
+        }
+        return false;
+    }
+}
+Optimal solution:
+import java.util.HashSet;
+
+class Solution {
+    public boolean containsDuplicate(int[] nums) {
+        HashSet<Integer> seen = new HashSet<>();
+        
+        for (int num : nums) {
+            // if already in the set, duplicate found
+            if (!seen.add(num)) {
+                return true;
+            }
+        }
+        return false;
+    }
+}
+
