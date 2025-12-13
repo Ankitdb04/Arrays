@@ -1,0 +1,84 @@
+import java.util.*;
+import java.lang.*;
+import java.io.*;
+
+class Codechef
+{
+    public static void main(String[] args) throws java.lang.Exception
+    {
+        // your code goes here
+        Scanner sc = new Scanner(System.in);
+        int t = sc.nextInt();
+        while (t--> 0) {
+            int r = sc.nextInt();
+            int g = sc.nextInt();
+            int b = sc.nextInt();
+            int sum = 0;
+            if (r > 0) {
+                sum++;
+                r--;
+            }
+            if (b > 0) {
+                sum++;
+                b--;
+            }
+            if (g > 0) {
+                sum++;
+                g--;
+            }
+            if (r >= b && r >= g) {
+                if (r > 0 && b > 0) {
+                    sum++;
+                    r--;
+                    b--;
+                }
+                if (r > 0 && g > 0) {
+                    sum++;
+                    r--;
+                    g--;
+                }
+                if (g > 0 && b > 0) {
+                    sum++;
+                    g--;
+                    b--;
+                }
+            }
+            else if (b >= r && b >= g) {
+                if (r > 0 && b > 0) {
+                    sum++;
+                    r--;
+                    b--;
+                }
+                if (b > 0 && g > 0) {
+                    sum++;
+                    b--;
+                    g--;
+                }
+                if (g > 0 && r > 0) {
+                    sum++;
+                    g--;
+                    r--;
+                }
+            }
+            else{
+                if (g > 0 && b > 0) {
+                    sum++;
+                    g--;
+                    b--;
+                }
+                if (r > 0 && g > 0) {
+                    sum++;
+                    r--;
+                    g--;
+                }
+                if (r > 0 && b > 0) {
+                    sum++;
+                    r--;
+                    b--;
+                }
+            }
+            System.out.println(sum);
+        }
+
+    }
+}
